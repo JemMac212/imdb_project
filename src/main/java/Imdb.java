@@ -1,18 +1,18 @@
 public class Imdb {
-    private String title;
-    private double score;
-    private String year;
-    private double duration;
-    private String rating;
-    private double budget;
-    private String genres;
-    private double gross;
-    private String director;
-    private String actor1;
-    private String actor2;
-    private String actor3;
-    private String language;
-    private String country;
+    private final String title;
+    private final double score;
+    private final String year;
+    private final double duration;
+    private final String rating;
+    private final double budget;
+    private final String genres;
+    private final double gross;
+    private final String director;
+    private final String actor1;
+    private final String actor2;
+    private final String actor3;
+    private final String language;
+    private final String country;
 
     public Imdb(String[] imdbRawData){
         this.title = imdbRawData[0];
