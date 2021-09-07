@@ -34,9 +34,12 @@ public class MovieRecordScanner {
         return true;
     }
 
+    /*
     public static void main(String[] args) {
+
         MovieRecordScanner movieRecordScanner = new MovieRecordScanner();
         movieRecordScanner.generateRawImdbData();
     }
+*/
 
 }
