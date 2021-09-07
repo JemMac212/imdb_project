@@ -9,6 +9,7 @@ public class MovieGenerator {
 
     public List<Map<String, Movie>> generateImdbMap() {
         List<Map<String, Movie>> allFilms = new ArrayList<>();
+        int iD = 1;
 
         for (String[] imdb : movieRecordScanner.generateRawImdbData()) {
             try {
@@ -19,6 +20,7 @@ public class MovieGenerator {
             } catch (Exception e){
                 logger.debug("Extra Exception Found " + Arrays.toString(imdb));
             }
+            iD +=1;
         }
         return allFilms;
     }
