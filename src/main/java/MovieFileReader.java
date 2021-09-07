@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class ImdbFileReader {
+public class MovieFileReader {
     public FileReader imdbReader(String imdbFileLocation){
         try {
             return new FileReader(imdbFileLocation);

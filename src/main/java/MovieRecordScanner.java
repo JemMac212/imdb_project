@@ -1,4 +1,3 @@
-import config_mgr.ConfigMgr;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -7,13 +6,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class ImdbRecordScanner {
-    private static final ImdbFileReader imdbFileReader = new ImdbFileReader();
-    private static final Logger logger = LogManager.getLogger(ImdbRecordScanner.class);
+public class MovieRecordScanner {
+    private static final MovieFileReader movieFileReader = new MovieFileReader();
+    private static final Logger logger = LogManager.getLogger(MovieRecordScanner.class);
 
     public List<String[]> generateRawImdbData(){
         List<String[]> imdbRawData = new ArrayList<>();
-        Scanner scanner = new Scanner(imdbFileReader.imdbReader());
+        Scanner scanner = new Scanner(movieFileReader.imdbReader(ConfigMgr.imdbFileLocation()));
 
         while (scanner.hasNext()){
             String[] imdbItem = scanner.nextLine().split(",");
@@ -36,8 +35,8 @@ public class ImdbRecordScanner {
     }
 
     public static void main(String[] args) {
-        ImdbRecordScanner imdbRecordScanner = new ImdbRecordScanner();
-        imdbRecordScanner.generateRawImdbData();
+        MovieRecordScanner movieRecordScanner = new MovieRecordScanner();
+        movieRecordScanner.generateRawImdbData();
     }
 
 }

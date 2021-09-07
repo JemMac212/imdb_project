@@ -10,21 +10,21 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class ImdbGeneratorTests {
-    private static Imdb randomImdb;
-    private static Map<String, Imdb> imdbMap;
+public class MovieGeneratorTests {
+    private static Movie randomMovie;
+    private static Map<String, Movie> imdbMap;
 
     @BeforeAll
     public static void setup(){
-        imdbMap = new ImdbGenerator().generateImdbMap();
-        List<String[]> imdbRawData = new ImdbRecordScanner().generateRawImdbData();
+        imdbMap = new MovieGenerator().generateImdbMap();
+        List<String[]> imdbRawData = new MovieRecordScanner().generateRawImdbData();
         Random random = new Random();
-        randomImdb = new Imdb(imdbRawData.get(random.nextInt(imdbRawData.size())));
+        randomMovie = new Movie(imdbRawData.get(random.nextInt(imdbRawData.size())));
     }
 
     @Test
     public void imdbTests(){
-        assertEquals(randomImdb.getTitle(), imdbMap.get(randomImdb.getYear()));
+        assertEquals(randomMovie.getTitle(), imdbMap.get(randomMovie.getYear()));
     }
 }
 
