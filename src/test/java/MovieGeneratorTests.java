@@ -1,3 +1,4 @@
+/*
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +29,7 @@ public class MovieGeneratorTests {
     }
 }
 
-
+*/
 /* public static void main(String[]args){
     System.out.println(randomImdb.getTitle());
 }
